@@ -24,4 +24,4 @@ I would like to add tags and filter my bookmarks using those tags
 
 As a manager,
 So that I can ensure user safety is maintained
-I would like restrict user to only their own manage bookmarks
+I would like restrict the user to only manage their own bookmarks
