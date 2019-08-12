@@ -1,5 +1,5 @@
 class Bookmarks
-  def all
-    %w[Google Facebook]
+  def self.all
+    %w[www.google.com www.facebook.com]
   end
 end

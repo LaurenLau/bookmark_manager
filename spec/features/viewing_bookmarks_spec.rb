@@ -5,7 +5,7 @@ feature 'viewing bookmarks' do
   end
   scenario 'visiting the bookmarks page' do
     visit('/bookmarks')
-    expect(page). to have_content("Google")
-    expect(page). to have_content("Facebook")
+    expect(page). to have_content("www.google.com")
+    expect(page). to have_content("www.facebook.com")
   end
 end
