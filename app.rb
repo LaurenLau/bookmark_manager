@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/bookmarks.rb'
 
 class BookmarkManager < Sinatra::Base
   get '/' do
@@ -6,7 +7,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-    'Google Facebook'
+    @show_bookmarks = Bookmarks.new.all
+    erb(:bookmarks)
   end
 
   run! if app_file == $PROGRAM_NAME
