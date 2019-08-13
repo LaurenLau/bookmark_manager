@@ -13,3 +13,5 @@ gem "rack", "~> 2.0"
 gem "simplecov", "~> 0.17.0"
 
 gem "simplecov-console", "~> 0.5.0"
+
+gem "pg", "~> 1.1"
