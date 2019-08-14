@@ -5,8 +5,9 @@ feature 'viewing bookmarks' do
     # Uses PG gem to connect to database
     connection = PG.connect(dbname: 'bookmark_manager_test')
     visit('/bookmarks')
-    fill_in "url", with:("http://www.makersacademy.com")
+    fill_in("url", with: "http://www.makersacademy.com")
+    fill_in("title", with: "Makers Academy")
     click_button("add")
-    expect(page).to have_content("http://www.makersacademy.com")
+    expect(page).to have_link("Makers Academy", href: "http://www.makersacademy.com")
   end
 end
