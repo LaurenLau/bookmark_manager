@@ -1,5 +1,5 @@
 
-feature 'viewing bookmarks' do
+feature 'Adding a bookmark' do
 
   scenario 'adding new bookmark' do
     # Uses PG gem to connect to database

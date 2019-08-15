@@ -1,5 +1,5 @@
 require_relative '../lib/bookmarks.rb'
-require './spec/features/database_helpers.rb'
+require './spec/database_helpers.rb'
 
 describe Bookmarks do
   describe 'all' do
