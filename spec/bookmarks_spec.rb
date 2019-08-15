@@ -19,7 +19,6 @@ describe Bookmarks do
     end
   end
 
-
   describe 'add' do
     it 'creates a new bookmark' do
      bookmark = Bookmarks.add(title: 'Google', url: 'http://www.google.com')
@@ -31,4 +30,11 @@ describe Bookmarks do
     end
   end
 
+  describe '.delete' do
+    it 'deletes the given bookmark' do
+      bookmark = Bookmarks.add(url: "http://www.makersacademy.com", title:'Makers Academy')
+      Bookmarks.delete(id: bookmark.id)
+      expect(Bookmarks.all.length).to eq 0
+    end
+  end
 end

@@ -1,4 +1,3 @@
-
 feature 'Adding a bookmark' do
 
   scenario 'adding new bookmark' do
