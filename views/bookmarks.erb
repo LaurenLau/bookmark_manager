@@ -7,9 +7,11 @@
       <form action='/bookmarks/<%= bookmark.id %>' method='post'>
         <input type='hidden' name='_method' value='DELETE' />
         <input type='submit' value='Delete'/>
+      </form>
     </li>
   <% end %>
 </ul>
+
 
 <form action='/add_bookmark' method='post' >
   <input type= 'text' value = 'title' name = 'title'>
