@@ -21,20 +21,32 @@ describe Bookmarks do
 
   describe 'add' do
     it 'creates a new bookmark' do
-     bookmark = Bookmarks.add(title: 'Google', url: 'http://www.google.com')
-      persisted_data = persisted_data(id: bookmark.id)
+     bookmarks = Bookmarks.add(title: 'Google', url: 'http://www.google.com')
+      persisted_data = persisted_data(id: bookmarks.id)
 
-      expect(bookmark).to be_a Bookmarks
-      expect(bookmark.title).to eq 'Google'
-      expect(bookmark.url).to eq 'http://www.google.com'
+      expect(bookmarks).to be_a Bookmarks
+      expect(bookmarks.title).to eq 'Google'
+      expect(bookmarks.url).to eq 'http://www.google.com'
     end
   end
 
   describe '.delete' do
     it 'deletes the given bookmark' do
-      bookmark = Bookmarks.add(url: "http://www.makersacademy.com", title:'Makers Academy')
-      Bookmarks.delete(id: bookmark.id)
+      bookmarks = Bookmarks.add(url: "http://www.makersacademy.com", title:'Makers Academy')
+      Bookmarks.delete(id: bookmarks.id)
       expect(Bookmarks.all.length).to eq 0
+    end
+  end
+
+  describe '.find' do
+    it 'gets the requested bookmark' do
+      bookmarks = Bookmarks.add(title: 'Google', url: 'http://www.google.com')
+      result = Bookmarks.find(id: bookmarks.id)
+
+      expect(bookmarks.length).to eq 3
+      expect(bookmarks.first).to be_a Bookmarks
+      expect(bookmarks.first.title).to eq 'Google'
+      expect(bookmarks.first.url).to eq 'http://www.google.com'
     end
   end
 end
